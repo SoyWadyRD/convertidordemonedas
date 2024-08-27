@@ -1,0 +1,259 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradiente de color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.converter {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del contenedor */
+    animation: fadeIn 1s ease-out; /* Animación de entrada */
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 2em; /* Tamaño de fuente más grande */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    margin-bottom: 15px; /* Mayor espacio entre los campos */
+}
+
+label {
+    font-weight: bold;
+    color: #0072ff; /* Color de texto de las etiquetas */
+}
+
+select, input {
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* Transición suave en el borde */
+}
+
+select:focus, input:focus {
+    border-color: #0072ff; /* Color de borde cuando está enfocado */
+    outline: none;
+}
+
+button {
+    padding: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em; /* Tamaño de fuente un poco mayor */
+    transition: background-color 0.3s ease; /* Transición suave en el color de fondo */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em; /* Tamaño de fuente más grande para mayor impacto */
+    text-align: center;
+    color: #333;
+    background-color: #f0f8ff; /* Fondo claro para el resultado */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para resaltar */
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para el modal */
+    overflow: auto; /* Habilitar el desplazamiento del modal si es necesario */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 3% auto; /* Centro del modal con margen superior */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para la lista de códigos de moneda */
+#currency-codes-list {
+    max-height: 60vh; /* Limitar la altura del área de lista */
+    overflow-y: auto; /* Habilitar desplazamiento si el contenido excede la altura máxima */
+    padding: 15px; /* Espaciado interno del contenedor */
+    border: 1px solid #ddd; /* Borde del contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo gris claro para el contenedor de la lista */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra ligera para darle profundidad */
+}
+
+/* Estilo para el enlace */
+a {
+    color: #007BFF; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.1em; /* Tamaño de fuente un poco mayor */
+    display: block; /* Hacer que el enlace ocupe toda la línea */
+    text-align: center; /* Centrar el texto del enlace */
+    margin-top: 20px; /* Espaciado superior */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transiciones suaves para el color y la sombra del texto */
+}
+
+a:hover {
+    color: #0056b3; /* Color del enlace al pasar el ratón */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra del texto al pasar el ratón */
+}
+
+/* Estilo específico para el enlace dentro del modal */
+.modal-content a {
+    color: #007BFF; /* Color del enlace en el modal */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.modal-content a:hover {
+    color: #0056b3; /* Color del enlace en el modal al pasar el ratón */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra del texto al pasar el ratón */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos del footer */
+/* Estilos del footer */
+.footer {
+    background-color: #1a1a1a; /* Fondo oscuro (ajustado a los colores de la página) */
+    color: #f0f0f0; /* Texto en color claro (ajustado a los colores de la página) */
+    text-align: center; /* Alinear el texto al centro */
+    padding: 5px 0; /* Espaciado más pequeño arriba y abajo */
+    position: fixed; /* Fijar en la parte inferior */
+    bottom: 0;
+    width: 100%; /* Ancho completo */
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil arriba */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+}
+
+.footer p {
+    margin: 0; /* Quitar el margen por defecto */
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .converter {
+        padding: 20px; /* Reducir el padding en pantallas más pequeñas */
+        max-width: 90%; /* Ancho máximo más pequeño */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño para encabezados */
+    }
+
+    select, input, button {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño para inputs y botones */
+    }
+
+    #result {
+        font-size: 1.2em; /* Tamaño de fuente más pequeño para resultados */
+        padding: 10px; /* Reducir el padding en pantallas más pequeñas */
+    }
+
+    .modal-content {
+        width: 90%; /* Hacer el modal más ancho en pantallas pequeñas */
+        margin: 10% auto; /* Ajustar el margen superior */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em; /* Tamaño de fuente aún más pequeño para encabezados */
+    }
+
+    select, input, button {
+        font-size: 0.8em; /* Tamaño de fuente más pequeño para inputs y botones */
+    }
+
+    #result {
+        font-size: 1em; /* Tamaño de fuente más pequeño para resultados */
+        padding: 8px; /* Reducir aún más el padding en pantallas más pequeñas */
+    }
+
+    .modal-content {
+        width: 95%; /* Hacer el modal casi del ancho completo en pantallas muy pequeñas */
+    }
+}
+
+@media (max-width: 320px) {
+    .converter {
+        padding: 15px; /* Reducir el padding para pantallas muy pequeñas */
+        max-width: 95%; /* Ancho máximo aún más pequeño */
+    }
+
+    h1 {
+        font-size: 1.1em; /* Tamaño de fuente más pequeño para encabezados */
+    }
+
+    select, input, button {
+        font-size: 0.75em; /* Tamaño de fuente aún más pequeño para inputs y botones */
+    }
+
+    #result {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño para resultados */
+        padding: 6px; /* Reducir el padding en pantallas muy pequeñas */
+    }
+
+    .modal-content {
+        width: 100%; /* Hacer el modal del ancho completo en pantallas extremadamente pequeñas */
+        margin: 5% auto; /* Ajustar el margen superior */
+    }
+}

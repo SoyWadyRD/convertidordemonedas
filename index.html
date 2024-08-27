@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Moneda</title>
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="converter">
+        <h1>Convertidor de Moneda</h1>
+        <form id="converter-form">
+            <div>
+                <label for="from-currency">De:</label>
+                <select id="from-currency" required></select>
+            </div>
+            <div>
+                <label for="to-currency">A:</label>
+                <select id="to-currency" required></select>
+            </div>
+            <div>
+                <label for="amount">Cantidad:</label>
+                <input type="number" id="amount" placeholder="Ingrese cantidad" required>
+            </div>
+            <button type="submit">Convertir</button>
+        </form>
+        <div id="result"></div>
+
+        <!-- Enlace para mostrar los códigos de moneda -->
+        <p><a href="#" id="show-currency-codes">¿No sabes cuál es el código de tu país?</a></p>
+    </div>
+
+    <!-- Modal para mostrar los códigos de moneda y nombres de países -->
+    <div id="currency-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Códigos de Moneda por País</h2>
+            <div id="currency-codes-list">
+                <!-- Aquí se llenará la lista con los códigos de moneda y nombres de países usando JavaScript -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+<footer class="footer">
+    <p>© 2024 Andres Lopez. Todos los derechos reservados.</p>
+</footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
