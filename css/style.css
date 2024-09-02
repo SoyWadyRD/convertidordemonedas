@@ -228,8 +228,12 @@ a:hover {
         padding: 8px; /* Reducir aún más el padding en pantallas más pequeñas */
     }
 
+    .converter{
+        width: 75%;
+    }
+
     .modal-content {
-        width: 95%; /* Hacer el modal casi del ancho completo en pantallas muy pequeñas */
+        width: 80%; /* Hacer el modal casi del ancho completo en pantallas muy pequeñas */
     }
 }
 
@@ -253,7 +257,7 @@ a:hover {
     }
 
     .modal-content {
-        width: 100%; /* Hacer el modal del ancho completo en pantallas extremadamente pequeñas */
+        width: 80%; /* Hacer el modal del ancho completo en pantallas extremadamente pequeñas */
         margin: 5% auto; /* Ajustar el margen superior */
     }
 }
